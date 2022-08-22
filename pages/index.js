@@ -9,15 +9,12 @@ export default function Home() {
         <title>return void();</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main>
+      <main className="wrap">
         <Header title="Welcome to" />
-        <p className="description">
-          <code>return void();</code>
-        </p>
+          <p className="description">
+              <code>return void();</code>
+          </p>
       </main>
-
-      <Footer />
     </div>
   )
 }
