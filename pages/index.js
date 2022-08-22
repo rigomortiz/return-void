@@ -1,23 +1,9 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Landing from '@components/templates/Landing'
 
-export default function Home() {
+const LandingPage = () =>  {
   return (
-    <div className="container">
-      <Head>
-        <title>return void();</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Header title="Welcome to" />
-        <p className="description">
-          <code>return void();</code>
-        </p>
-      </main>
-
-      <Footer />
-    </div>
+    <Landing/>
   )
 }
+
+export default LandingPage;
