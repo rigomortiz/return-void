@@ -41,7 +41,7 @@ const Landing = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="wrap">
         <Header title="Welcome to" />
         <div
           ref={landingVRExperience}

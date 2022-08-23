@@ -1,11 +1,11 @@
 html,
 body {
-  background: #000000;
   color: #ffffff;
   padding: 0;
   margin: 0;
   font-family: "Cyberpunk", sans-serif;
-}
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M0 0l1600 0q0 39 -26.5 70.5t-68.5 40.5l-1280 0q-39 0 -69 -40.5t-30 -70.5zm0 719l1280 0q40 0 69.5 -40.5t29.5 -70.5l-1600 0q-39 0 -69.5 40.5t-29.5 70.5z'/%3E%3C/g%3E%3C/svg%3E");}
 
 * {
   box-sizing: border-box;
@@ -32,4 +32,17 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+
+.wrap {
+  background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/106403/glitch-bg.png) center center no-repeat;
+  background-size: contain;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: 0.8s my-animation alternate infinite;
 }
