@@ -1,16 +1,21 @@
 import Head from 'next/head'
-import Header from 'components/molecules/Header'
-import Footer from 'components/molecules/Footer'
-import { useEffect, useRef } from 'react';
-import { LandingScene } from 'virtual-reality/scenes/LandingScene'
+import {useEffect, useRef} from 'react';
+import {LandingScene} from 'virtual-reality/scenes/LandingScene'
+import {TVStaticNoise} from 'virtual-reality/scenes/TVStaticNoise';
 
 const landingScene = new LandingScene();
+const tvStaticNoise = new TVStaticNoise();
 
 const Landing = () => {
   const landingVRExperienceHost = useRef<HTMLDivElement>(null);
+  const tvStaticNoiseVRExperienceHost = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // if host div reference is initialize Ok, VR landing scene is mounted
+    // if host div reference is initialized OK, VR landing a scene is mounted
+    if (tvStaticNoiseVRExperienceHost.current !== null) {
+      tvStaticNoise.setDivElementHost(tvStaticNoiseVRExperienceHost.current);
+      tvStaticNoise.renderScene();
+    }
     if (landingVRExperienceHost.current !== null) {
       landingScene.setDivElementHost(landingVRExperienceHost.current);
       landingScene.renderScene();
@@ -18,23 +23,18 @@ const Landing = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <Head>
         <title>return void();</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
-
-      <main className="wrap">
-        <Header title="Welcome to" />
-        <div
-          ref={landingVRExperienceHost}
-        />
-        <p className="description">
-          <code>return void();</code>
-        </p>
-      </main>
-
-      <Footer />
+        <div ref={tvStaticNoiseVRExperienceHost}>
+          <div className="title">return void();</div>
+          <div className="body"><b>NO SIGNAL</b></div>
+          <div className="footer">
+            bad request & sentinel
+          </div>
+        </div>
     </div>
   )
 }
