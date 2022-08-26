@@ -1,40 +1,33 @@
-import Head from 'next/head'
-import {useEffect, useRef} from 'react';
-import {LandingScene} from 'virtual-reality/scenes/LandingScene'
-import {TVStaticNoise} from 'virtual-reality/scenes/TVStaticNoise';
-
-const landingScene = new LandingScene();
-const tvStaticNoise = new TVStaticNoise();
+import { useState, useEffect } from 'react';
+import TvStaticExperience from 'components/molecules/TvStaticExperience';
+import LandingExperience from 'components/molecules/LandingExperience';
+import Title from 'components/atoms/Title';
+import Footer from 'components/atoms/Footer';
+import DeadChannelTransition from 'components/atoms/DeadChannelTransition';
 
 const Landing = () => {
-  const landingVRExperienceHost = useRef<HTMLDivElement>(null);
-  const tvStaticNoiseVRExperienceHost = useRef<HTMLDivElement>(null);
+  const [ experienceIndex, setExperienceIndex ] = useState(0);
 
   useEffect(() => {
-    // if host div reference is initialized OK, VR landing a scene is mounted
-    if (tvStaticNoiseVRExperienceHost.current !== null) {
-      tvStaticNoise.setDivElementHost(tvStaticNoiseVRExperienceHost.current);
-      tvStaticNoise.renderScene();
-    }
-    if (landingVRExperienceHost.current !== null) {
-      landingScene.setDivElementHost(landingVRExperienceHost.current);
-      landingScene.renderScene();
-    }
+    setTimeout(() => {
+      setExperienceIndex(1);
+    }, 10_000);
   }, []);
+
+  const renderVRExperience = (experienceIndex: number) => {
+    const experiences = [ TvStaticExperience, LandingExperience ];
+    const CurrentExperience = experiences[experienceIndex];
+
+    return experienceIndex === 1 ?
+      (<><CurrentExperience /><DeadChannelTransition triggerStartTransition/></>) :
+      <CurrentExperience />
+  }
 
   return (
     <div>
-      <Head>
-        <title>return void();</title>
-        <link rel="icon" href="/favicon.ico"/>
-      </Head>
-        <div ref={tvStaticNoiseVRExperienceHost}>
-          <div className="title">return void();</div>
-          <div className="body"><b>NO SIGNAL</b></div>
-          <div className="footer">
-            bad request & sentinel
-          </div>
-        </div>
+      <Title title='return void();' />
+      {renderVRExperience(experienceIndex)}
+      <Footer text='bad request & sentinel'/>
     </div>
   )
 }
