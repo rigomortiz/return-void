@@ -1,4 +1,4 @@
 export enum MaterialEnum {
-  Phong = 'MeshPhongMaterial',
-  Basic = 'MeshPhongMaterial'
+  Basic = 'MeshBasicMaterial',
+  Phong = 'MeshPhongMaterial'
 }

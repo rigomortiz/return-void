@@ -6,7 +6,7 @@ import { Coordinate } from 'virtual-reality/types/types';
 export class WireframeCubeCreator extends AbsCubeCreator {
   public factoryMethod(color: THREE.ColorRepresentation, materialType: MaterialEnum, coordinate: Coordinate): THREE.Mesh<THREE.BoxGeometry, THREE.Material> {
     const availableMaterials = {
-      [MaterialEnum.Basic]: THREE.MeshPhongMaterial,
+      [MaterialEnum.Basic]: THREE.MeshBasicMaterial,
       [MaterialEnum.Phong]: THREE.MeshPhongMaterial
      }
     const MaterialTypeClass = availableMaterials[materialType];
