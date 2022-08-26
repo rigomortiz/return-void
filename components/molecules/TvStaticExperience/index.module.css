@@ -1,0 +1,12 @@
+.body {
+  font-family: monospace;
+  font-size: 50pt;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display:block;
+  top: 40%;
+  color: white;
+  background-color: black;
+}

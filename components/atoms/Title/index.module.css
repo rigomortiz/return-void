@@ -1,0 +1,12 @@
+.title {
+  font-family: monospace;
+  color: white;
+  font-size: 18pt;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display:block;
+  top: 0;
+  background-color: black;
+}

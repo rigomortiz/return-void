@@ -1,4 +1,4 @@
-import Landing from 'components/templates/Landing'
+import Landing from 'components/templates/Landing';
 
 const LandingPage = () =>  {
   return (

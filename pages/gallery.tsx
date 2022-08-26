@@ -1,4 +1,4 @@
-import Gallery from 'components/templates/Gallery'
+import Gallery from 'components/templates/Gallery';
 
 const GalleryPage = () => {
   return (

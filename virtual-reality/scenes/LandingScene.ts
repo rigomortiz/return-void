@@ -1,40 +1,63 @@
 import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { DirectionalLightCreator } from 'virtual-reality/lights/DirectionalLightCreator';
+import { WireframeCubeCreator } from 'virtual-reality/meshes/cubes/WireframeCubeCreator';
+import { MaterialEnum } from 'virtual-reality/types/enums';
 
 export class LandingScene {
-  private divElementHost?: HTMLDivElement;
+  private scene = new THREE.Scene();
+  private camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  private renderer = new THREE.WebGLRenderer()
+  private divHost?: HTMLDivElement;
+  private wireFrameCubesCreator = new WireframeCubeCreator();
+  private directionalLightCreator = new DirectionalLightCreator();
 
   setDivElementHost(divElement: HTMLDivElement) {
-    this.divElementHost = divElement;
+    this.divHost = divElement;
   }
 
   renderScene() {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-    const renderer = new THREE.WebGLRenderer();
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.camera.position.set(2.5, -1, -1);
+    new OrbitControls(this.camera, this.renderer.domElement);
 
-    renderer.setSize( window.innerWidth, 300 );
+    const light = this.directionalLightCreator.factoryMethod([ -1, 2, 4 ]);
+    const cubes = [
+      this.wireFrameCubesCreator.factoryMethod(0x0044aa, MaterialEnum.Phong, [ -5, 2, -3 ]),
+      this.wireFrameCubesCreator.factoryMethod(0x8844aa, MaterialEnum.Phong, [ -2.5, 1, -1 ]),
+      this.wireFrameCubesCreator.factoryMethod(0x00ff00, MaterialEnum.Basic, [ 0, 0, 0 ]),
+      this.wireFrameCubesCreator.factoryMethod(0xaa8844, MaterialEnum.Phong, [ 2.5, -1, -1 ])
+    ]
 
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( { color: 0x00ff00, wireframe: true } );
-    const cube = new THREE.Mesh( geometry, material );
+    cubes.forEach(cube => this.scene.add(cube));
+    this.scene.add(light);
+    this.renderCubesAnimation(cubes);
+    this.mountSceneToHost();
+  }
 
-    scene.add( cube );
-    camera.position.z = 2;
+  private renderCubesAnimation(cubes: THREE.Mesh[]) {
+    const render = (time: number) => {
+      time *= 0.001;  // convert time to seconds
 
-    const animate = () => {
-      requestAnimationFrame( animate );
-      cube.rotation.x += 0.02;
-      cube.rotation.y += 0.01;
-      renderer.render( scene, camera );
-    };
+      cubes.forEach((cube, ndx) => {
+        const speed = 1 + ndx * .1;
+        const rot = time * speed;
+        cube.rotation.x = rot;
+        cube.rotation.y = rot;
+      });
 
-    animate();
+      this.renderer.render(this.scene, this.camera);
+      requestAnimationFrame(render);
+    }
 
-    // mount landing scene in de divHostElement provided
-    if (this.divElementHost) {
-      this.divElementHost.appendChild( renderer.domElement );
+    requestAnimationFrame(render);
+  }
+
+  private mountSceneToHost() {
+    if (this.divHost) {
+      this.divHost.appendChild(this.renderer.domElement);
     } else {
-      console.warn('[warning] Landing VR scene could not been rendered because divElementHost is not set yet');
+      console.warn('[waning] div host for VR experience was not provided before rendering');
     }
   }
 }
