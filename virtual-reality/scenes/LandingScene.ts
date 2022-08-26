@@ -15,14 +15,15 @@ export class LandingScene {
 
   renderScene() {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
-    this.camera.position.z = 3;
+    this.camera.position.set(2.5, -1, -1);
     new OrbitControls(this.camera, this.renderer.domElement);
 
     const light = this.createWhiteLight([ -1, 2, 4 ]);
     const cubes = [
-      this.createWireframeCube(0x00ff00, false, [ 0, 0, 0 ]),
+      this.createWireframeCube(0x0044aa, true, [ -5, 2, -3 ]),
       this.createWireframeCube(0x8844aa, true, [ -2.5, 1, -1 ]),
-      this.createWireframeCube(0xaa8844, true, [ 2.5, -1, -1])
+      this.createWireframeCube(0x00ff00, false, [ 0, 0, 0 ]),
+      this.createWireframeCube(0xaa8844, true, [ 2.5, -1, -1 ])
     ]
 
     cubes.forEach(cube => this.scene.add(cube));

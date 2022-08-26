@@ -3,6 +3,7 @@ import TvStaticExperience from 'components/molecules/TvStaticExperience';
 import LandingExperience from 'components/molecules/LandingExperience';
 import Title from 'components/atoms/Title';
 import Footer from 'components/atoms/Footer';
+import DeadChannelTransition from 'components/atoms/DeadChannelTransition';
 
 const Landing = () => {
   const [ experienceIndex, setExperienceIndex ] = useState(0);
@@ -17,7 +18,9 @@ const Landing = () => {
     const experiences = [ TvStaticExperience, LandingExperience ];
     const CurrentExperience = experiences[experienceIndex];
 
-    return <CurrentExperience />
+    return experienceIndex === 1 ?
+      (<><CurrentExperience /><DeadChannelTransition triggerStartTransition/></>) :
+      <CurrentExperience />
   }
 
   return (
