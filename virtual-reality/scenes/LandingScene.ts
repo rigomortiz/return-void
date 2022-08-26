@@ -1,13 +1,16 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-
-type Coordinate = [ number, number, number ]
+import { DirectionalLightCreator } from 'virtual-reality/lights/DirectionalLightCreator';
+import { WireframeCubeCreator } from 'virtual-reality/meshes/cubes/WireframeCubeCreator';
+import { MaterialEnum } from 'virtual-reality/types/enums';
 
 export class LandingScene {
   private scene = new THREE.Scene();
   private camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
   private renderer = new THREE.WebGLRenderer()
   private divHost?: HTMLDivElement;
+  private wireFrameCubesCreator = new WireframeCubeCreator();
+  private directionalLightCreator = new DirectionalLightCreator();
 
   setDivElementHost(divElement: HTMLDivElement) {
     this.divHost = divElement;
@@ -18,39 +21,18 @@ export class LandingScene {
     this.camera.position.set(2.5, -1, -1);
     new OrbitControls(this.camera, this.renderer.domElement);
 
-    const light = this.createWhiteLight([ -1, 2, 4 ]);
+    const light = this.directionalLightCreator.factoryMethod([ -1, 2, 4 ]);
     const cubes = [
-      this.createWireframeCube(0x0044aa, true, [ -5, 2, -3 ]),
-      this.createWireframeCube(0x8844aa, true, [ -2.5, 1, -1 ]),
-      this.createWireframeCube(0x00ff00, false, [ 0, 0, 0 ]),
-      this.createWireframeCube(0xaa8844, true, [ 2.5, -1, -1 ])
+      this.wireFrameCubesCreator.factoryMethod(0x0044aa, MaterialEnum.Phong, [ -5, 2, -3 ]),
+      this.wireFrameCubesCreator.factoryMethod(0x8844aa, MaterialEnum.Phong, [ -2.5, 1, -1 ]),
+      this.wireFrameCubesCreator.factoryMethod(0x00ff00, MaterialEnum.Basic, [ 0, 0, 0 ]),
+      this.wireFrameCubesCreator.factoryMethod(0xaa8844, MaterialEnum.Phong, [ 2.5, -1, -1 ])
     ]
 
     cubes.forEach(cube => this.scene.add(cube));
     this.scene.add(light);
     this.renderCubesAnimation(cubes);
     this.mountSceneToHost();
-  }
-
-  private createWireframeCube(color: THREE.ColorRepresentation, isPhong: boolean, coordinate: Coordinate) {
-    const MaterialTypeClass = isPhong ? THREE.MeshPhongMaterial : THREE.MeshBasicMaterial
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new MaterialTypeClass({ color, wireframe: true });
-    const cube = new THREE.Mesh(geometry, material);
-
-    cube.position.set(...coordinate);
-
-    return cube;
-  }
-
-  private createWhiteLight(coordinate: Coordinate) {
-    const color = 0xFFFFFF;
-    const intensity = 3;
-    const light = new THREE.DirectionalLight(color, intensity);
-
-    light.position.set(...coordinate);
-
-    return light;
   }
 
   private renderCubesAnimation(cubes: THREE.Mesh[]) {
