@@ -1,9 +1,7 @@
-import Landing from 'components/templates/Landing';
-
-const LandingPage = () =>  {
+const Manifest = () =>  {
   return (
-    <Landing/>
+    <h1>Manifest</h1>
   )
 }
 
-export default LandingPage;
+export default Manifest;
