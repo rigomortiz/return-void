@@ -1,5 +1,9 @@
-const CyberShamanism = () => {
-  return (<h1>CyberShamanism</h1>);
+import CyberShamanism from 'components/templates/artworks/CyberShamanism';
+
+const CyberShamanismPage = () => {
+  return (
+    <CyberShamanism />
+  );
 }
 
-export default CyberShamanism;
+export default CyberShamanismPage;
