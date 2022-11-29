@@ -19,7 +19,7 @@ USA 3.0 veia como una amenza a latin city pero se las arreglo para colonizar sus
 distritos e implantar sus programas en los neurotransmutadores de cada ciudadano,
 de esta manera podían tener controlada a la mayoria de la población.
 
-- No olviden de dónde nació la Latin city, no olviden que en las entrañas de la sopa infinita de datos, se esconden aún guardados los secretos del mundo, algunas inteligencias artificiales progresistas lograron escapar antes de ser reprogramadas y aun vagan por rincones ocultos del anti-metaverso. - grito una voz ronca seguida de una risa casí malevola -
+No olviden de dónde nació la Latin city, no olviden que en las entrañas de la sopa infinita de datos, se esconden aún guardados los secretos del mundo, algunas inteligencias artificiales progresistas lograron escapar antes de ser reprogramadas y aun vagan por rincones ocultos del anti-metaverso. - grito una voz ronca seguida de una risa casí malevola -
 
 Era Bad Request, en el bar "Ancestral Drinks Museum" - o simplemente Museum como era conocido -,
 gritando a sus seguidores y enseguida brindando con su principal socio, Rigo Mortiz.
