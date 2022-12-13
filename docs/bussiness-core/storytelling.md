@@ -84,17 +84,3 @@ y en especial con su mayor socio Rigo Mortiz.
 
 Juntos y ahora como iconos de Latin city, planean destruir todo,
 no sol virtual, también fisicamente.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
