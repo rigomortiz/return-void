@@ -24,3 +24,7 @@ con los que pudo importar unos implantes pulmonares de ultima generación.
 
 Después de 15 años pudo salir de la capsula de oxigeno,
 muchos seguidores lo esperan en las calles.
+
+PRIMERA FRASE:
+
+No olviden de dónde nació la Latin city, no olviden que en las entrañas de la sopa infinita de datos, se esconden aún guardados los secretos del mundo, algunas inteligencias artificiales progresistas lograron escapar antes de ser reprogramadas y aun vagan por rincones ocultos del anti-metaverso. - grito una voz ronca seguida de una risa casí malevola -
