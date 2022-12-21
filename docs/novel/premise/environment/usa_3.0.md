@@ -1,0 +1,2 @@
+A medida que su técnologia avanzaba, la desigualdad incrementaba,
+dejando gran parte de la población sin voz, ni voto, incluso algunas personas eran tratadas peor que animales si no tenían las últimas actualizaciones en su software y hardware.

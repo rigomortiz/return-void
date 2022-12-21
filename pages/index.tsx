@@ -1,22 +1,13 @@
-const Manifest = () =>  {
-    var title = String.raw`
-Manifiesto
 
-Void                0.
-Informational       1xx. Has llegado a la ruta sin retorno, tú decides si descargas la última actualización a tu ser. new Enlightenment();
-Successful          2xx. La nueva versión está en tu sistema opertivo. Es necesario un reinicio de tu ser.
-Redirection         3xx. Te he redireccionado a un nuevo sitio en la matrix. A un nuevo entorno en ti mism@.
-Client error        4xx. Ahora tu eres un nuevo bug en el Sistema, puedas hacer que la matrix se destruya. new Restart();
-Server error        5xx. Error en el Sistema. No hay un puente gateway a la última realidad. Iniciando proxy a una nueva.
+const Index = () =>  {
 
-Welcome to return void(). 
-A un despertar.
-        `;
     return (
         <div>
-            <pre> {title} </pre>
+            <video autoPlay muted poster="images/return-void-background.png">
+                <source src="video/return-void.mp4" type="video/mp4" />
+            </video>
         </div>
-    )
+    );
 }
 
-export default Manifest;
+export default Index;
