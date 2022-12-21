@@ -9,10 +9,13 @@
   },
   "dependencies": {
     "cypress": "^10.0.3",
-    "next": "^12.1.5",
+    "gray-matter": "^4.0.3",
+    "next": "^12.3.4",
     "placeholder-img-generator": "^1.2.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "raw-loader": "^4.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.4",
     "react-typing-effect": "^2.0.5",
     "three": "^0.143.0"
   },
