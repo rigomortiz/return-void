@@ -2,23 +2,23 @@ import { useEffect, useRef } from 'react';
 import { TVStaticNoise } from 'virtual-reality/scenes/TVStaticNoise';
 import styles from './index.module.css';
 
-const Landing = () => {
-  const tvStaticNoiseVRExperienceHost = useRef<HTMLDivElement>(null);
+const TVStatic = () => {
+    const tvStaticNoiseVRExperienceHost = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (tvStaticNoiseVRExperienceHost.current !== null) {
-      const tvStaticNoise = new TVStaticNoise();
+    useEffect(() => {
+        if (tvStaticNoiseVRExperienceHost.current !== null) {
+            const tvStaticNoise = new TVStaticNoise();
 
-      tvStaticNoise.setDivElementHost(tvStaticNoiseVRExperienceHost.current);
-      tvStaticNoise.renderScene();
-    }
-  }, []);
+            tvStaticNoise.setDivElementHost(tvStaticNoiseVRExperienceHost.current);
+            tvStaticNoise.render();
+        }
+    }, []);
 
-  return (
-    <div ref={tvStaticNoiseVRExperienceHost}>
-      <div className={styles.body}><b>NO SIGNAL</b></div>
-    </div>
-  )
+    return (
+        <div ref={tvStaticNoiseVRExperienceHost}>
+            <div className={styles.body}><b>NO SIGNAL</b></div>
+        </div>
+    )
 }
 
-export default Landing;
+export default TVStatic;
