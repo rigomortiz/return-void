@@ -17,6 +17,9 @@ las corporaciones y el estado, todos los gobiernos caen uno tras otro.
 poco a poco gueron llegando genios, cientificos, militares, ingenieros, que provenian de los restos de ChinaIo y EroInc, atraídos por los desechos ciberneticos y técnologicos del basurero
 muchos en buenas condiciones, solo de una o dos versiones anteriores.
 
+  2048, o como era conocido 2^11, el año donde se empieza a escribir la nueva epoca, y donde se narra esta historia.
+  
+
 
 
 

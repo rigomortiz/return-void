@@ -5,9 +5,6 @@ import ReactMarkdown from "react-markdown";
 function PostTemplate({ content, data }) {
   // This holds the data between `---` from the .md file
   const frontmatter = data
-  console.log(content)
-  console.log(data)
-  console.log("hello")
 
   return (
     <>
