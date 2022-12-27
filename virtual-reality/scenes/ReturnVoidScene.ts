@@ -9,25 +9,26 @@ import {
     PerspectiveCamera,
     PlaneGeometry,
     Scene, TextureLoader,
-    WebGLRenderer, Audio, AudioLoader, AudioListener
+    WebGLRenderer,
+    //Audio, AudioLoader, AudioListener
 } from "three";
 
 
 export class ReturnVoidScene extends SceneElement {
     private clock = new Clock();
     private delta = 0;
-    private geometry;
-    private scene;
-    private camera;
-    private renderer;
-    private material;
-    private mesh;
-    private smokeParticles;
+    private geometry: BoxGeometry | undefined;
+    private scene: Scene | undefined;
+    private camera: PerspectiveCamera | undefined;
+    private renderer: WebGLRenderer | undefined;
+    private material: MeshLambertMaterial | undefined;
+    private mesh: Mesh<BoxGeometry, any> | undefined;
+    private smokeParticles: [Mesh] | undefined;
     private cubeSineDriver = 0;
 
     init() {
         window.onload = function() {
-          let context = new AudioContext();
+          //let context = new AudioContext();
         }
         this.scene = new Scene();
         this.scene.background = new Color('hsl(0, 0%, 4%)')
@@ -52,6 +53,7 @@ export class ReturnVoidScene extends SceneElement {
         this.geometry = new BoxGeometry(200, 200, 200);
         this.material = new MeshLambertMaterial({ color: 'hsl(0, 0%, 40%)', wireframe: false });
         this.mesh = new Mesh(this.geometry, this.material);
+        // @ts-ignore
         this.smokeParticles = []
 
         /*
@@ -74,7 +76,7 @@ export class ReturnVoidScene extends SceneElement {
     render(): any {
         let light = new DirectionalLight('hsl(0, 0%, 90%)',0.5);
         light.position.set(-1,0,1);
-        this.scene.add(light);
+        this.scene!.add(light);
 
         let smokeTexture = new TextureLoader()
             .load('https://s3-us-west-2.amazonaws.com/s.cdpn.io/95637/Smoke-Element.png');
@@ -91,8 +93,8 @@ export class ReturnVoidScene extends SceneElement {
             let particle = new Mesh(smokeGeo, smokeMaterial);
             particle.position.set(Math.random()*500-250,Math.random()*500-250,Math.random()*1000-100);
             particle.rotation.z = Math.random() * 360;
-            this.scene.add(particle);
-            this.smokeParticles.push(particle);
+            this.scene!.add(particle);
+            this.smokeParticles!.push(particle);
         }
 
         const animate = () => {
@@ -106,7 +108,7 @@ export class ReturnVoidScene extends SceneElement {
 
         // mount landing scene in de divHostElement provided
         if (this.divElementHost) {
-            this.divElementHost.appendChild(this.renderer.domElement);
+            this.divElementHost.appendChild(this.renderer!.domElement);
         } else {
             console.warn('[warning] Landing VR scene could not been rendered because divElementHost is not set yet');
         }
@@ -114,17 +116,17 @@ export class ReturnVoidScene extends SceneElement {
     }
 
     evolveSmoke() {
-        let sp = this.smokeParticles.length;
+        let sp = this.smokeParticles!.length;
         while(sp--) {
-            this.smokeParticles[sp].rotation.z += (this.delta * 0.2);
+            this.smokeParticles![sp].rotation.z += (this.delta * 0.2);
         }
     }
     renderSmoke() {
-        this.mesh.rotation.x += 0.005;
-        this.mesh.rotation.y += 0.01;
+        this.mesh!.rotation.x += 0.005;
+        this.mesh!.rotation.y += 0.01;
         this.cubeSineDriver += .01;
-        this.mesh.position.z = 100 + (Math.sin(this.cubeSineDriver) * 500);
-        this.renderer.render( this.scene, this.camera );
+        this.mesh!.position.z = 100 + (Math.sin(this.cubeSineDriver) * 500);
+        this.renderer!.render( this.scene!, this.camera! );
     }
 
 }

@@ -74,31 +74,31 @@ class Audio extends Component<any, any> {
         const bufferLength = analyser.frequencyBinCount;
         const dataArray = new Uint8Array(bufferLength);
         analyser.getByteTimeDomainData(dataArray);
-        let canvasCtx =  document.getElementById('visualizer')!.getContext('2d')
-        canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
+        let canvasCtx = (document.getElementById('visualizer') as HTMLCanvasElement)!.getContext('2d')
+        canvasCtx!.clearRect(0, 0, WIDTH, HEIGHT);
         const colors = ['#204829', '#22b455','#80ce87', '#92e5a1']
         function draw() {
-          const drawVisual = requestAnimationFrame(draw);
+          requestAnimationFrame(draw);
           analyser.getByteTimeDomainData(dataArray);
-          canvasCtx.fillStyle = "#020204";
-          canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
-          canvasCtx.lineWidth = 7;
-          canvasCtx.strokeStyle = colors[Math.floor(Math.random() * 3)];
-          canvasCtx.beginPath();
+          canvasCtx!.fillStyle = "#020204";
+          canvasCtx!.fillRect(0, 0, WIDTH, HEIGHT);
+          canvasCtx!.lineWidth = 7;
+          canvasCtx!.strokeStyle = colors[Math.floor(Math.random() * 3)];
+          canvasCtx!.beginPath();
           const sliceWidth = WIDTH / bufferLength;
           let x = 0;
           for (let i = 0; i < bufferLength; i++) {
             const v = dataArray[i] / 128.0;
             const y = v * (HEIGHT / 2);
             if (i === 0) {
-              canvasCtx.moveTo(x, y);
+              canvasCtx!.moveTo(x, y);
             } else {
-              canvasCtx.lineTo(x, y);
+              canvasCtx!.lineTo(x, y);
             }
             x += sliceWidth;
           }
-          canvasCtx.lineTo(WIDTH, HEIGHT / 2);
-          canvasCtx.stroke();
+          canvasCtx!.lineTo(WIDTH, HEIGHT / 2);
+          canvasCtx!.stroke();
         }
         draw()
       })
