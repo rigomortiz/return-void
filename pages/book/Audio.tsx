@@ -54,7 +54,7 @@ class Audio extends Component<any, any> {
       })
       .then((response) => {
         document.getElementById('play')!.setAttribute('disabled', 'disabled')
-        let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let audioCtx = new (window.AudioContext)();
         let source = audioCtx.createBufferSource();
         const analyser = audioCtx.createAnalyser();
         audioCtx.decodeAudioData(
