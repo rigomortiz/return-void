@@ -8,8 +8,13 @@ function PostTemplate({ content, data }) {
 
   return (
     <>
-      <h1>{frontmatter.title}</h1>
-      <ReactMarkdown source={content}  children={content}/>
+      <section className='section'>
+        <div className='container'>
+          <h1 className='title'>{frontmatter.title}</h1>
+          <ReactMarkdown source={content}  children={content}/>
+       </div>
+      </section>
+      
     </>
   )
 }

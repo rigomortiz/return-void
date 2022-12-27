@@ -8,6 +8,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "cypress": "^10.0.3",
     "gray-matter": "^4.0.3",
     "next": "^12.3.4",
@@ -17,6 +18,8 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.4",
     "react-typing-effect": "^2.0.5",
+    "react-unity-webgl": "^9.3.0",
+    "sass": "^1.57.1",
     "three": "^0.143.0"
   },
   "devDependencies": {

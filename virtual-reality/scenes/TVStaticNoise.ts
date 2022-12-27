@@ -9,6 +9,9 @@ import {
 import {SceneElement} from "./SceneElement";
 
 export class TVStaticNoise extends SceneElement {
+    init() {
+
+    }
 
     render() {
         const scene = new Scene();
@@ -20,7 +23,6 @@ export class TVStaticNoise extends SceneElement {
 
         /** Point **/
         const dots: Points<BufferGeometry, PointsMaterial>[] = [];
-        console.log(window.innerWidth, window.innerHeight);
         for (let i = -1 * innerWidth / 10; i < innerWidth / 10; i += 1) {
             for (let j = -1 * innerHeight / 10; j < innerHeight / 10; j += 1) {
                 let dotGeometry = new BufferGeometry();

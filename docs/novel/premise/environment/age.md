@@ -1,0 +1,8 @@
+La historia se desenvuelve en el año 2048 o como fue nombrado el año
+2^11, habían pasado dos decadas desde la última guerra, entre las corporaciones
+y el estado, la rápida fabricación de computadoras cuanticas y la evolucuión de
+los superconductores -en manos de las empresas-, los algoritmos de cifrado como el AES y el RSA fueron vulnerados, las nuevas computadoras no tardaban mas de 21 horas de decifrarlos, eso ocacionò un caos, millones de personas fueron vulnerables, miles de empresas y gobiernos ya no tenian seguridad en la informaciòn.
+
+En este año se diò a conocer el nuevo regimen, en donde la tecnologia y los llamados neorotrasmutadores eran la soluciòn, era la regiòn, la pòlitica, la paz. la estabilidad, pero en el fondo ocultaban la oscura y malevola forma del Nuevo Orden Mundial. 
+
+En esta epoca las personas se eran ajenas una a la otra, toda nececidad se las dotaba el Gran Systema o el Gran Metaverse, con el contro, de la tecnologìa , lossentidos, las sensaciones  y las emociones, todo eso estaba configurado en los neuro trasmutadores, una forma absoluta de control mental. La cueva de Platon estaba en los visores, pero no podias salir ella mas que arancarte los circuitos de su cerebro y ser un NotFound un 404 o vagabundos como antes se les conocia. Los 404 eran seres anarquicos pero sin dotes de pòlitica y revoluciòn social, pero dentro de esos seres estabas los cyberpunks, eran individuos que por alguna razòn no tenian Neurotrasmutadores (NTs), pero habian adquirido conocimiento de libertad, 
