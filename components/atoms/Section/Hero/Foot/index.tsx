@@ -1,11 +1,16 @@
-import Audio from "../../../../molecules/ReturnVoidExperience/Audio";
+import {Component} from "react";
 
-const FootHero = () => (
-  <div className={"hero-foot"}>
-    <div className="content has-text-centered">
-      <Audio></Audio>
-    </div>
-  </div>
-)
+class FootHero extends Component<{ children: any }> {
+  render() {
+    let {children} = this.props;
+    return (
+      <div className="hero-foot">
+        <div className="content has-text-centered">
+          {children}
+        </div>
+      </div>
+    );
+  }
+}
 
 export default FootHero;

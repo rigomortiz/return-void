@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-const Index = () =>  {
+const SkyEffect = () =>  {
   return (
     <div className={styles.sky}>
         <div className="stars"></div>
@@ -10,4 +10,4 @@ const Index = () =>  {
   );
 }
 
-export default Index;
+export default SkyEffect;

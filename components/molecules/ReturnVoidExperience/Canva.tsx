@@ -3,11 +3,8 @@ import {Component} from "react";
 class Canva extends Component<any, any> {
 
   componentDidMount() {
-    const canvas = this.refs.canvas as HTMLCanvasElement;
+    const canvas = this.refs.canvasGrid as HTMLCanvasElement;
 
-    if (!canvas.getContext) {
-        return;
-    }
     const ctx = canvas.getContext('2d');
     ctx!.fillStyle = '#201547'
 
@@ -28,7 +25,7 @@ class Canva extends Component<any, any> {
 
   render() {
     return (
-      <canvas ref={'canvas'} className={'grid'} ></canvas>
+      <canvas ref={'canvasGrid'} className={'grid'} width={'100%'} height={'200px'}></canvas>
     );
   }
 

@@ -1,17 +1,15 @@
-import React from "react";
-import Paragraph from "../../../Paragraph";
+import React, {Component} from "react";
 
-export interface IHeadHero {
-  title: string;
-  classes: string;
+class HeadHero extends Component<{children: any}> {
+  render(){
+    let children = this.props.children;
+
+    return (
+      <div className="hero-head">
+        {children}
+      </div>
+    )
+  }
 }
-
-const HeadHero = ({title, classes}: IHeadHero) => (
-  <div className="hero-head">
-    <nav className="level">
-      <Paragraph __html={title} classes={'level-item ' + classes}/>
-    </nav>
-  </div>
-)
 
 export default HeadHero;

@@ -16,7 +16,7 @@ const Index = () =>  {
         },
         button: {
           text: 'Play',
-          classes: 'is-danger is-rounded'
+          classes: 'is-danger is-rounded',
         }
       }
     }

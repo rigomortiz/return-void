@@ -1,19 +1,20 @@
-import Audio from "../../molecules/ReturnVoidExperience/Audio";
+import {Component} from "react";
 
 export interface IButton {
   text: string;
   classes: string;
 }
 
-const Button = ({text, classes}: IButton) => {
-  function click(this: any) {
-     Audio.getAudio(Audio.URL);
-     document.querySelector(".button")!.setAttribute('disabled', 'disabled')
+class Button extends Component<{ classes: any, text: any, onClick: any }> {
+
+  render() {
+    return (
+      <button className={`button ${this.props.classes}`} onClick={this.props.onClick}>
+        {this.props.text}
+      </button>
+    )
   }
 
-  return (
-    <button className={'button ' + classes} onClick={click}>{text}</button>
-  )
 }
 
 export default Button;

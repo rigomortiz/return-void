@@ -1,47 +1,50 @@
 import React, {Component} from "react";
 
-class Audio extends Component<any, any> {
+class AudioVisualizer extends Component<any, any> {
   public static URL = '/audio/Malfunction.mp3'
 
-  // device() {
-  //   // Older browsers might not implement mediaDevices at all, so we set an empty object first
-  //   if (navigator.mediaDevices === undefined) {
-  //     navigator.mediaDevices = {};
-  //   }
-  //
-  //   // Some browsers partially implement mediaDevices. We can't assign an object
-  //   // with getUserMedia as it would overwrite existing properties.
-  //   // Add the getUserMedia property if it's missing.
-  //   if (navigator.mediaDevices.getUserMedia === undefined) {
-  //     navigator.mediaDevices.getUserMedia = function (constraints) {
-  //       // First get ahold of the legacy getUserMedia, if present
-  //       const getUserMedia =
-  //         navigator.webkitGetUserMedia ||
-  //         navigator.mozGetUserMedia ||
-  //         navigator.msGetUserMedia;
-  //
-  //       // Some browsers just don't implement it - return a rejected promise with an error
-  //       // to keep a consistent interface
-  //       if (!getUserMedia) {
-  //         return Promise.reject(
-  //           new Error("getUserMedia is not implemented in this browser")
-  //         );
-  //       }
-  //
-  //       // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
-  //       return new Promise(function (resolve, reject) {
-  //         getUserMedia.call(navigator, constraints, resolve, reject);
-  //       });
-  //     };
-  //   }
-  // }
+  /*
+  device() {
+    // Older browsers might not implement mediaDevices at all, so we set an empty object first
+    if (navigator.mediaDevices === undefined) {
+      navigator.mediaDevices = {};
+    }
+
+    // Some browsers partially implement mediaDevices. We can't assign an object
+    // with getUserMedia as it would overwrite existing properties.
+    // Add the getUserMedia property if it's missing.
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+      navigator.mediaDevices.getUserMedia = function (constraints) {
+        // First get ahold of the legacy getUserMedia, if present
+        const getUserMedia =
+          navigator.webkitGetUserMedia ||
+          navigator.mozGetUserMedia ||
+          navigator.msGetUserMedia;
+
+        // Some browsers just don't implement it - return a rejected promise with an error
+        // to keep a consistent interface
+        if (!getUserMedia) {
+          return Promise.reject(
+            new Error("getUserMedia is not implemented in this browser")
+          );
+        }
+
+        // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+        return new Promise(function (resolve, reject) {
+          getUserMedia.call(navigator, constraints, resolve, reject);
+        });
+      };
+    }
+  }
+   */
+
   init() {
     //this.device()
     // this.audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   }
 
   play() {
-    Audio.getAudio(Audio.URL)
+    AudioVisualizer.getAudio(AudioVisualizer.URL)
   }
 
   public static getAudio(url: string) {
@@ -140,7 +143,7 @@ class Audio extends Component<any, any> {
 
           analyser.getByteFrequencyData(dataArray);
 
-          canvasCtx!.fillStyle = "#000";
+          canvasCtx!.fillStyle = "hsl(0, 0%, 4%)";
           canvasCtx!.fillRect(0, 0, WIDTH, HEIGHT);
 
           const barWidth = (WIDTH / bufferLength) * 2.5;
@@ -150,8 +153,12 @@ class Audio extends Component<any, any> {
            for (let i = 0; i < bufferLength; i++) {
             barHeight = dataArray[i] / 2;
 
-            canvasCtx!.fillStyle = '#E93CAC';
+            canvasCtx!.fillStyle = '#E93CFF';
             canvasCtx!.fillRect(x, HEIGHT - barHeight / 1.2, barWidth, barHeight);
+           canvasCtx!.fillStyle = '#E93C77';
+            canvasCtx!.fillRect(x, HEIGHT - barHeight / 1.5, barWidth, barHeight);
+            canvasCtx!.fillStyle = '#E93C00';
+            canvasCtx!.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight);
 
             x += barWidth + 1;
           }
@@ -176,4 +183,4 @@ class Audio extends Component<any, any> {
   }
 
 }
-export default Audio;
+export default AudioVisualizer;
