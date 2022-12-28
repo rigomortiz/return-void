@@ -1,7 +1,6 @@
 @import "colors";
 @import '~bulma/bulma';
-@import "return-void";
-@import "sky";
+@import "../components/molecules/ReturnVoidExperience/index.module";
 
 html {
   height: 100%;

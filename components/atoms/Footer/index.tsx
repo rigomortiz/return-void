@@ -4,12 +4,10 @@ interface IFooter {
   text: string
 }
 
-const Footer = ({ text }: IFooter) => {
-  return (
-    <div className={styles.footer}>
-      {text}
-    </div>
-  )
-}
+const Footer = ({ text }: IFooter) => (
+  <div className={styles.footer}>
+    {text}
+  </div>
+)
 
 export default Footer;
