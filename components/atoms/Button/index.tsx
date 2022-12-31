@@ -1,10 +1,5 @@
 import {Component} from "react";
 
-export interface IButton {
-  text: string;
-  classes: string;
-}
-
 class Button extends Component<{ classes: any, text: any, onClick: any }> {
 
   render() {

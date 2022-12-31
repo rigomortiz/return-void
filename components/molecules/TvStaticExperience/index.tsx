@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { TVStaticNoise } from 'virtual-reality/scenes/TVStaticNoise';
+import { TVStaticNoise } from 'components/core/web-xr/scenes/TVStaticNoise';
 import styles from './index.module.css';
 
 const TVStatic = () => {

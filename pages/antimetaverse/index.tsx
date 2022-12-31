@@ -1,9 +1,9 @@
-import AntiMetaverse from "components/templates/AntiMetaverse";
+import AntiMetaverse from "components/templates/web-XR/AntiMetaverse";
 
 const AntiMetaversePage = () => {
-    return (
-        <AntiMetaverse />
-    )
+  return (
+    <AntiMetaverse />
+  )
 }
 
 export default AntiMetaversePage;

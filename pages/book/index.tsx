@@ -1,32 +1,19 @@
 import React from "react";
-import ReturnVoidExperience, {IReturnVoidEx} from "../../components/molecules/ReturnVoidExperience";
+import BodyHero from "../../components/atoms/Section/Hero/Body";
+import Paragraph from "../../components/atoms/Paragraph";
+import SectionHero from "../../components/atoms/Section/Hero";
+import Link from "../../components/atoms/Link";
 
-const Index = () =>  {
-  const returnVoidExp: IReturnVoidEx = {
-    section: {
-      classes: 'is-fullheight return-void',
-      headHero: {
-        title: 'bad request & rigomortiz',
-        classes: 'has-text-centered subtitle is-lowercase has-text-weight-light is-size-3 is-size-5-mobile has-text-white'
-      },
-      bodyHero: {
-        title: {
-          __html: 'RETURN<br/>VOID',
-          classes: 'title is-uppercase has-text-weight-bold is-size-1-mobile'
-        },
-        button: {
-          text: 'Play',
-          classes: 'is-danger is-rounded',
-        }
-      }
-    }
-  }
+const BookPage = () =>  {
 
   return (
-      <ReturnVoidExperience
-        section={returnVoidExp.section}
-      />
+    <SectionHero classes={'is-black is-fullheight'}>
+      <BodyHero>
+        <Paragraph text={{__html: 'Book'}} classes={'title'} />
+        <Link classes={'is-text'} text={'Open'} href={'/book/cover'}></Link>
+      </BodyHero>
+    </SectionHero>
   );
 }
 
-export default Index;
+export default BookPage;

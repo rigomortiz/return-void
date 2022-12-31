@@ -1,12 +1,11 @@
-import React from "react";
+import React, {Component} from "react";
 
-export interface IParagraph {
-  __html: string;
-  classes: string;
+class Paragraph extends Component<{text: any, classes: any}> {
+  render() {
+    return (
+      <p className={this.props.classes} dangerouslySetInnerHTML={this.props.text} />
+    )
+  }
 }
-
-const Paragraph = ({__html, classes}: IParagraph) => (
-  <p className={classes} dangerouslySetInnerHTML={{__html}} />
-)
 
 export default Paragraph;

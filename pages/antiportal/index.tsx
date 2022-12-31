@@ -1,9 +1,9 @@
-import AntiPortal from "components/templates/AntiPortal";
+import HeroBasic from "../../components/templates/pages/HeroBasic";
 
 const AntiPortalPage = () => {
-    return (
-        <AntiPortal />
-    )
+  return (
+    <HeroBasic text={'ANTI PORTAL'} />
+  )
 }
 
 export default AntiPortalPage;
