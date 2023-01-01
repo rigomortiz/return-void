@@ -35,26 +35,14 @@
   z-index: -1;
   height: 100vh;
   width: 100vw;
-  margin: 0;
+  margin: 50%;
 }
 
 .visualizer {
-  background-color: hsl(0, 0%, 4%);
-  width: 100% !important;
-  height: 150px !important;
   position: absolute !important;
   z-index: 1 !important;
-  //top: 20%;
-  bottom: 0;
+  top: 50%;
   left: 0;
-  border-top: 1px solid #59CBE8;
-  box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #59CBE8,
-  0 0 0.8rem #1E22AA,
-  0 0 2.8rem #201547,
-  inset 0 0 1.3rem #051C2C;
-
 }
 
 @keyframes pulsate {
