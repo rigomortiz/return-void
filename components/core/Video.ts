@@ -11,13 +11,17 @@ export class Video {
     };
   }
 
-  public static stream(video: HTMLVideoElement | null | undefined, constraints: MediaStreamConstraints,
-                       callback?: (video: HTMLVideoElement) => void) {
+  public static stream(video: HTMLVideoElement | null | undefined,
+                       constraints: MediaStreamConstraints,
+                       canvas?: HTMLCanvasElement | null | undefined,
+                       canvasFrame?: CanvasRenderingContext2D | null | undefined,
+                       callback?: (video: HTMLVideoElement, canvasFrame: CanvasRenderingContext2D,
+                                   canvas: HTMLCanvasElement) => void) {
     navigator.mediaDevices.getUserMedia(constraints)
       .then((mediaStream: MediaStream) => {
         Video.videoInit(video!, mediaStream)
         if (callback) {
-          callback(video!);
+          callback(video!, canvasFrame!, canvas!);
         }
       })
       .catch((err) => {

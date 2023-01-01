@@ -18,8 +18,7 @@ class VideoStream extends Component<{classes: any}> {
         <video
           className={this.props.classes}
           ref={v => (this._video = v)}
-          controls width={"640"}
-          height={"360"} />
+          controls />
       </>
     );
   }
