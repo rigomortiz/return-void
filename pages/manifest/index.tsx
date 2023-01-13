@@ -1,5 +1,5 @@
-const Manifest = () =>  {
-    var title = String.raw`
+const Manifest = () => {
+  var title = String.raw`
 Manifiesto
 
 Void                0.
@@ -12,11 +12,9 @@ Server error        5xx. Error en el Sistema. No hay un puente gateway a la últ
 Welcome to return void(). 
 A un despertar.
         `;
-    return (
-        <div>
-            <pre> {title} </pre>
-        </div>
-    )
+  return (
+    <pre className={'has-background-black is-family-monospace is-size-3 has-text-white-bis'}> {title} </pre>
+  )
 }
 
 export default Manifest;

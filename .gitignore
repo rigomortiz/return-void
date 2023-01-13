@@ -32,3 +32,6 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 /.idea/
+./package-lock.json
+!/package-lock.json
+!/.idea/

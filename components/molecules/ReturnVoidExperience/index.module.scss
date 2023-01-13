@@ -1,0 +1,88 @@
+.title {
+  font-family: type-writer, serif;
+  letter-spacing: 8px;
+  font-size: clamp(6rem, 8vw - 2rem, 3rem);
+  color: #FFDE59;
+  //text-shadow: -5px 0 #E93CAC, 0px 5px #2AD2C9, 5px 0 #2AD2C9, -0px -5px #E93CAC;
+  text-shadow: 0 0 2px #00BCE1,
+  0 0 5px #00BCE1,
+  0 0 16px #00BCE1,
+  0 0 37px #E93CAC;
+  line-height: 1.2;
+  animation: pulsate 1.5s infinite alternate;
+  z-index: 2;
+  position: inherit;
+}
+
+.buttonPlay {
+  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.subtitle {
+  font-family: volunmo, monospace;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 4px #000000;
+  position: inherit;
+  z-index: 2;
+}
+
+.press-key {
+  color: white;
+  //text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+.canvas {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+  margin: 50%;
+}
+
+.visualizer {
+  background-color: #051C2C;
+  position: absolute !important;
+  z-index: 2 !important;
+  top: 30%;
+  left: 0;
+  border-bottom-color: #E93CAC;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.sky {
+  position: absolute !important;
+  z-index: 1 !important;
+  top: 0;
+  left: 0;
+}
+
+.grid {
+   position: absolute !important;
+  z-index: 1 !important;
+  bottom: 0%;
+  left: 0;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #00BCE1,
+    0 0 11px #00BCE1,
+    0 0 19px #00BCE1,
+    0 0 40px #E93CAC;
+  }
+
+  0% {
+    text-shadow: 0 0 2px #00BCE1,
+    0 0 4px #00BCE1,
+    0 0 6px #00BCE1,
+    0 0 10px #E93CAC;
+  }
+}
