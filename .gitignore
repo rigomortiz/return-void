@@ -33,3 +33,5 @@ yarn-error.log*
 .netlify
 /.idea/
 ./package-lock.json
+!/package-lock.json
+!/.idea/
