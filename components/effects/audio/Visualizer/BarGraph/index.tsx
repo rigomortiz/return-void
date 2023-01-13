@@ -22,14 +22,14 @@ class BarGraphVisualizer extends Visualizer {
       this._canvasContext!.fillStyle = style.backgroundColor;
       this._canvasContext!.fillRect(0, 0, WIDTH, HEIGHT);
 
-      const barWidth = (WIDTH / bufferLength) * 2.5;
+      const barWidth = (WIDTH / bufferLength) * 16.5;
       let barHeight;
       let x = 0;
 
       for (let i = 0; i < bufferLength; i++) {
-        barHeight = dataArray[i] / 2;
+        barHeight = dataArray[i] / 1;
         this._canvasContext!.fillStyle = style.barColor;
-        this._canvasContext!.fillRect(x, HEIGHT - barHeight / 2, barWidth, barHeight);
+        this._canvasContext!.fillRect(x, HEIGHT - barHeight / 1, barWidth, barHeight);
         x += barWidth + 1;
       }
     }

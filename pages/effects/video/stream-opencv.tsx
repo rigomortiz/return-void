@@ -8,9 +8,6 @@ import HeadHero from "../../../components/atoms/Section/Hero/Head";
 import NavLevel from "../../../components/atoms/NavLevel";
 import VideoStreamEffectOpenCV from "../../../components/effects/video/Stream/EffectsOpenCV";
 import cv from "opencv-ts";
-import Mat from "opencv-ts/src/core/Mat";
-import {delay} from "rxjs";
-import {setIn} from "immutable";
 
 const VideoStreamOpenCVPage = () => {
   let videoStreamEffectOpenCV: VideoStreamEffectOpenCV | null;
@@ -31,7 +28,7 @@ const VideoStreamOpenCVPage = () => {
       video: true
     };
 
-    function textTerminator(img: Mat.Mat) {
+    /*function textTerminator(img: Mat.Mat) {
       const scale = 0.5;
       const red = new cv.Scalar(255, 0, 0, 125);
       const white = new cv.Scalar(255, 255, 255, 255);
@@ -47,8 +44,9 @@ const VideoStreamOpenCVPage = () => {
 
       cv.putText(img, 'SEARCH MODE: _', new cv.Point(50, 300), cv.FONT_HERSHEY_DUPLEX, 1,
         white, 1, cv.LINE_AA)
-    }
-        let textOn = true;
+    }*/
+
+    //let textOn = true;
 
 
     Video.stream(videoInput, constraints, canvasOutput, canvasFrameContext,
@@ -61,12 +59,12 @@ const VideoStreamOpenCVPage = () => {
         let input = new cv.Mat(HEIGHT, WIDTH, cv.CV_8UC4);
         let output = new cv.Mat(HEIGHT, WIDTH, cv.CV_8UC3);
 
-        function title() {
-          canvasOutputContext.font = "30px Monospace";
-          canvasOutputContext.fillStyle = "rgba(255,255,255,255)";
-          canvasOutputContext.textAlign = "center";
-          canvasOutputContext.fillText("SEARCH MODE", WIDTH / 2, HEIGHT / 2);
-        }
+        // function title() {
+        //   canvasOutputContext.font = "30px Monospace";
+        //   canvasOutputContext.fillStyle = "rgba(255,255,255,255)";
+        //   canvasOutputContext.textAlign = "center";
+        //   canvasOutputContext.fillText("SEARCH MODE", WIDTH / 2, HEIGHT / 2);
+        // }
 
         function title2() {
           canvasOutputContext.font = "30px Monospace";
@@ -75,10 +73,10 @@ const VideoStreamOpenCVPage = () => {
           canvasOutputContext.fillText("SEARCH MODE", WIDTH / 2, HEIGHT / 2);
         }
 
-        function titleOnSwitch(b) {
-          textOn = textOn!;
-          console.log("title", b)
-        }
+        // function titleOnSwitch(b) {
+        //   textOn = textOn!;
+        //   console.log("title", b)
+        // }
         function text() {
             let result = '';
             let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

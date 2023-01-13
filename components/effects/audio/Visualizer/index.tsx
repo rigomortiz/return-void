@@ -19,7 +19,7 @@ abstract class Visualizer extends Component<{ classes: any }> {
   render() {
     return (
       <div ref={d => (this._div = d)}>
-        <canvas ref={c => (this._canvas = c)} height={'100%'} width={'100%'} className={this.props.classes}/>
+        <canvas ref={c => (this._canvas = c)} height={'250'} width={'100%'} className={this.props.classes}/>
       </div>
     );
   }

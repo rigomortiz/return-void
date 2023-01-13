@@ -10,7 +10,7 @@ class VideoStreaming extends Component<any, any>{
 
   init() {
     // Store useful UI elements
-    const video: HTMLVideoElement = document.querySelector("video") as HTMLVideoElement;
+    const video: HTMLVideoElement = document.querySelector("video") as unknown as HTMLVideoElement;
     // Create float32 arrays for getFrequencyResponse()
    // const frequencyArray: Float32Array = new Float32Array([1000, 2000, 3000, 4000, 5000]);
 
@@ -83,7 +83,7 @@ class VideoStreaming extends Component<any, any>{
         source.connect(analyser);
         source.connect(audioCtx.destination);
 
-        const canvas = (document.querySelector('.visualizer') as HTMLCanvasElement)
+        const canvas = (document.querySelector('.visualizer') as unknown as HTMLCanvasElement)
         const intendedWidth = document.querySelector(".content")!.clientWidth;
         canvas.setAttribute("width", String(intendedWidth));
         const canvasCtx = canvas!.getContext('2d')

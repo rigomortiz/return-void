@@ -9,9 +9,9 @@ class ImageCV extends Component<any, any> {
   }
 
   edit() {
-    let imgElement = (document.querySelector('.img-rv') as HTMLCanvasElement);
+    let imgElement = (document.querySelector('.img-rv')) as unknown as HTMLCanvasElement;
     let input = cv.imread(imgElement);
-    let hsv = new cv.Mat();
+    //let hsv = new cv.Mat();
     let output = new cv.Mat();
     // You can try more different parameters
     //cv.cvtColor(input, hsv, cv.COLOR_BGR2HSV, 0);
